@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div class="container">
+{% with messages = get_flashed_messages() %}
+        {% if messages: %}
+        {% for message in messages: %}
+        <p style="color: red;"><em>{{ message }}</em></p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+{% if success: %}
+
+    <h2>Thank you for registering. Your API key is :</h2>
+    <h3>{{ key }}</h3>
+    <p>Please copy and save as there is no way to recover the key if you lose it.</p>
+
+{% else: %}
+
+    <h2>Please enter your email to register for your API key.</h2>
+    {{ wtf.quick_form(form, novalidate=True) }}
+
+{% endif %}
+</div>
+{% endblock %}

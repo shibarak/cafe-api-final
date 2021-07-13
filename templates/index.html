@@ -1,0 +1,8 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Welcome to the Cafe & Wifi API</h1>
+        <p>View our documentation <a href="https://documenter.getpostman.com/view/14941057/Tz5qaHJw#0a4cc6fb-ca32-48c0-b4f2-4c842201b682">here.</a></p>
+        <p>Or create an API key <a href="{{ url_for('generate_key') }}">here.</a></p>
+</div>
+{% endblock %}
